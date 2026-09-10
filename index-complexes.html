@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#159b73">
+<title>جمعية بشراكم لتحفيظ القرآن</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img class="logo-img" src="boshra-logo.jpg" alt="شعار جمعية بشراكم">
+    <div><h1>جمعية بشراكم لتحفيظ القرآن</h1><p>نظام متابعة الطلاب والحلقات</p></div>
+  </div>
+  <button type="button" class="profile" onclick="openAndGo('teacher')">حساب المعلم</button>
+</header>
+<main>
+<section class="hero"><div><small>لوحة التحكم</small><h2>متابعة الحفظ والمراجعة بسهولة</h2><p>منصة حديثة لإدارة الحلقات ومتابعة الطلاب والحفظ والمراجعة.</p></div><div class="hero-mark">۞</div></section>
+<section class="stats">
+ <article><strong id="studentsCount">0</strong><span>الطلاب</span></article>
+ <article><strong id="ringsCount">0</strong><span>الحلقات</span></article>
+ <article><strong id="teachersCount">0</strong><span>المعلمون</span></article>
+ <article><strong id="todayAttendance">0</strong><span>حضور اليوم</span></article>
+</section>
+<h2 class="section-title">الخدمات</h2>
+<section class="grid">
+ <button type="button" onclick="openAndGo('students')"><i>👥</i><b>الطلاب</b><span>إضافة ومتابعة الطلاب</span></button>
+ <button type="button" onclick="openAndGo('complexes')"><i>🏢</i><b>المجمعات</b><span>المجمعات والحلقات التابعة لها</span></button>
+ <button type="button" onclick="openAndGo('rings')"><i>🕌</i><b>الحلقات</b><span>إدارة حلقات التحفيظ</span></button>
+ <button type="button" onclick="openAndGo('teachers')"><i>👨‍🏫</i><b>المعلمون</b><span>حسابات وصلاحيات المعلمين</span></button>
+ <button type="button" onclick="openAndGo('attendance')"><i>✅</i><b>الحضور</b><span>الحضور والغياب اليومي</span></button>
+ <button type="button" onclick="openAndGo('tracking')"><i>📚</i><b>الحفظ والمراجعة</b><span>تسجيل الورد والتقييم</span></button>
+ <button type="button" class="quran-card" onclick="openAndGo('quran')"><i>📖</i><b>مصحف المعلم</b><span>المصحف والعلامة المرجعية</span></button>
+ <button type="button" onclick="openAndGo('tests')"><i>⭐</i><b>الاختبارات والتقييم</b><span>الحفظ والتجويد والأخطاء</span></button>
+ <button type="button" onclick="openAndGo('reports')"><i>📊</i><b>التقارير</b><span>تقارير الإنجاز والإحصائيات</span></button>
+</section>
+<section id="panel" class="panel hidden" aria-live="polite"></section>
+</main>
+<footer>جمعية بشراكم لتحفيظ القرآن بمنطقة الجوف</footer>
+<script src="app.js"></script>
+<script>
+function goToPanel(){
+  var p=document.getElementById('panel');
+  if(!p) return;
+  setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'start'});},100);
+}
+function openAndGo(type){
+  if(type==='teacher'){
+    if(typeof showTeacher==='function') showTeacher();
+  } else if(typeof openPanel==='function') {
+    openPanel(type);
+  }
+  goToPanel();
+}
+</script>
+</body>
+</html>
