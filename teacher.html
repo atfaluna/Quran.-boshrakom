@@ -1,0 +1,14 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#159b73"><link rel="stylesheet" href="style.css"><title>بوابة المعلم | بشراكم</title></head><body>
+<header><div class="brand"><img class="logo-img" src="boshra-logo.jpg"><div><h1>بوابة المعلم</h1><p>الحلقة والمتابعة اليومية</p></div></div><a class="profile" href="index.html">الرئيسية</a></header>
+<main><section class="hero"><div><small>المعلم</small><h2>حلقتي</h2><p>ادخل بحساب المعلم ثم تابع الحلقة المسندة وطلابها.</p></div><div class="hero-mark">👨‍🏫</div></section>
+<section class="grid">
+<button onclick="showTeacher()"><i>👨‍🏫</i><b>دخول المعلم</b><span>اختيار حساب المعلم</span></button>
+<button onclick="showMyAssignedRing()"><i>🕌</i><b>حلقتي</b><span>الحلقة المسندة إليّ</span></button>
+<button onclick="openPanel('attendance')"><i>✅</i><b>الحضور</b><span>تسجيل حضور الطلاب</span></button>
+<button onclick="openPanel('tracking')"><i>📚</i><b>الحفظ والمراجعة</b><span>متابعة الورد اليومي</span></button>
+<button onclick="openPanel('tests')"><i>⭐</i><b>التقييم</b><span>تقييم الحفظ والتجويد</span></button>
+<button onclick="openPanel('quran')"><i>📖</i><b>مصحفي</b><span>موضع القراءة</span></button>
+</section><section id="panel" class="panel hidden"></section></main><footer>جمعية بشراكم لتحفيظ القرآن بمنطقة الجوف</footer>
+<script src="app.js"></script><script>
+function showMyAssignedRing(){if(!currentTeacherId)return showTeacherLogin();var t=currentTeacher();if(!t||!t.ringId){panel().innerHTML=head("حلقتي","لا توجد حلقة مسندة لهذا المعلم حاليًا");return;}showRingStudents(t.ringId);}
+</script></body></html>
